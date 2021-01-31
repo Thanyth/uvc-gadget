@@ -1,11 +1,21 @@
-## Documentation
+# Chapter II - Software
 
-- [linux/Documentation/usb/gadget-testing.txt](https://github.com/torvalds/linux/blob/master/Documentation/usb/gadget-testing.txt)
+## 1 - Initial setup and Git
 
-- [linux/Documentation/usb/gadget_configfs.txt](https://github.com/torvalds/linux/blob/master/Documentation/usb/gadget_configfs.txt)
+[Update OS and get the Git on SD card](src/21SetupGit.md)
 
-- [configfs_start](http://www.spinics.net/lists/linux-usb/msg76388.html)
+## 0 - Davidhunt uvc-gadget modification
 
-- [usb gadget](https://github.com/torvalds/linux/tree/master/Documentation/usb)
+[Modification of climberhunt files](src/20climberhuntSetup.md)
 
-- [configfs](https://github.com/torvalds/linux/tree/master/Documentation/filesystems/configfs)
+## 2 - Raspberry Pi OS configuration (system)
+
+[Let's *play* on RaspOS system file](src/22RaspOSconfigs.md)
+
+## 3 - App installation service
+
+[Make and run app](src/23AppInstall.md)
+
+## 4 - Debug
+
+[lorem ipsum](src/.md)
