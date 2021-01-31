@@ -1,28 +1,30 @@
 # Chapter II - Software
 
-## Git repository modification
+## 0 - Git repository modification
 
 > Everything is aim at mac compatibility. I do not own Windows PC so no test is or will be made.
+> It should be note that **this doc is only to inform you on what change I've made to climberhunt fork**. All change bellow are integrated in the clone repo you are now. So it will contain more explaination than the other doc in the src folder.
 
 #### General uvc-gadget setup
 
   1. Edit the piwebcam executable file `nano ~/uvc-gadget/piwebcam`. 
-    - Scroll to the last line and change the parameter `-f1 -s2 -r1` to `-f1 -s1 -r1`
-    > I haven't seen why it's behaving that way on MacOS is set to 2 and not to 1. 
-      0 = Full Speed (FS)
-      1 = High Speed (HS)
-      2 = Super Speed (SS)
-    - Save with `CTRL[⌃]+[o]` follow by `enter` and exit with `CTRL[⌃]+[x]` 
+     - Scroll to the last line and change the parameter `-f1 -s2 -r1` to `-f1 -s1 -r1`
+       > 0 = Full Speed (FS)
+       > 1 = High Speed (HS)
+       > 2 = Super Speed (SS)
+     - Save with `CTRL[⌃]+[o]` follow by `[enter]` and exit with `CTRL[⌃]+[x]` 
   1. Edit the piwebcam system service file `nano ~/uvc-gadget/piwebcam.service`.
-    - Change the description under `[Unit]` to `Start pi webcam service`.
+     - Change the description under `[Unit]` to `Start pi webcam service`.
 
 #### Camera uvc-gadget setup
 
-> Need to modify the `multi-gadget.sh` file first before copying the directory in the system and building the app. And that file name should really be change to something less pain to remember to type/long for no reason. Probably have impact elsewhere so... Search needed.
+> Need to modify the `multi-gadget.sh` file first before copying the directory in the system and building the app. 
+> That file name should really be change to something less pain to remember to type/long for no reason. Probably have impact elsewhere so... Search needed.
+
   1. `sudo nano ~/uvc-gadget/multi-gadget.sh`
   1. *Optional* change the name of the device. So when you connect via USB you will have a custon name
-     Scroll down to the 16th line and change `"PI4 USB Device"` to your taste
-    > You can change the manufacturer name at the line before if you desire
+     > Scroll down to the 16th line and change `"PI4 USB Device"` to your taste
+     > You can change the manufacturer name at the line before if you desire
   1. At the 29 line, change `5000000` to `333333`
      The original git, other fork and the linux git mention the `dwFrameInterval` is in 100ns units. [see uvc_driver.c] (https://github.com/torvalds/linux/blob/c4439713e82a0d746e533ae5ddd7dfa832e2a486/drivers/media/usb/uvc/uvc_driver.c#L381) 
      Thus far when you calculate the frame per second (fps) you want it add up.
