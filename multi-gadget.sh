@@ -12,8 +12,8 @@ echo 0x01 > /sys/kernel/config/usb_gadget/pi4/bDeviceProtocol
 
 mkdir /sys/kernel/config/usb_gadget/pi4/strings/0x409
 echo 100000000d2386db > /sys/kernel/config/usb_gadget/pi4/strings/0x409/serialnumber
-echo "Samsung" > /sys/kernel/config/usb_gadget/pi4/strings/0x409/manufacturer
-echo "PI4 USB Device" > /sys/kernel/config/usb_gadget/pi4/strings/0x409/product
+echo "Raspberry" > /sys/kernel/config/usb_gadget/pi4/strings/0x409/manufacturer
+echo "Pi HQ Webcam" > /sys/kernel/config/usb_gadget/pi4/strings/0x409/product
 mkdir /sys/kernel/config/usb_gadget/pi4/configs/c.2
 mkdir /sys/kernel/config/usb_gadget/pi4/configs/c.2/strings/0x409
 echo 500 > /sys/kernel/config/usb_gadget/pi4/configs/c.2/MaxPower
@@ -26,7 +26,7 @@ ln -s /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/control/header/h /sys
 
 mkdir -p /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p
 cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwFrameInterval
-5000000
+333333 
 EOF
 cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/wWidth
 1920
@@ -35,15 +35,34 @@ cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg
 1080
 EOF
 cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMinBitRate
-10000000
+1000
 EOF
 cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMaxBitRate
-100000000
+1000
 EOF
 cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMaxVideoFrameBufferSize
-7372800
+4147789
 EOF
 
+# Original number
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwFrameInterval
+# 5000000 
+# EOF
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/wWidth
+# 1920
+# EOF
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/wHeight
+# 1080
+# EOF
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMinBitRate
+# 10000000
+# EOF
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMaxBitRate
+# 100000000
+# EOF
+# cat <<EOF > /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/mjpeg/m/1080p/dwMaxVideoFrameBufferSize
+# 7372800
+# EOF
 
 mkdir /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/header/h
 cd /sys/kernel/config/usb_gadget/pi4/functions/uvc.usb0/streaming/header/h
