@@ -5,7 +5,7 @@
 ### Boot kernel setup
 
   1. `sudo nano /boot/config.txt`  
-      > Scroll all the way down to the last line (whatever you have has a last line)  
+      > Scroll all the way down to the last line (whatever is your last line)  
      - Add an extra line at the end. Then add `dtoverlay=dwc2`  
        ``` bash
        # Exemple withouth the extra line

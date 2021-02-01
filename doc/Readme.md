@@ -16,6 +16,6 @@
 
 [Make and run app](src/23AppInstall.md)
 
-## 4 - Debug
+# Chapter III - Debug
 
-[lorem ipsum](src/.md)
+[latency and general issue](src/31Debug.md)
